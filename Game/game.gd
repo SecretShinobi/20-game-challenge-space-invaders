@@ -31,9 +31,4 @@ func _on_node_2d_shoot(projectile, direction, location):
 	projectile.position = location
 	projectile.position.y -= 50
 	projectile.velocity = projectile.velocity.rotated(direction)
-	projectile.is_destroyed.connect(_on_laser_is_destroyed)
 	add_child(projectile)
-
-
-func _on_laser_is_destroyed():
-	pass
