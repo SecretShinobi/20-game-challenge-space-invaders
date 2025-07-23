@@ -1,0 +1,16 @@
+[gd_scene load_steps=5 format=3 uid="uid://bqk0p8n50tqwi"]
+
+[ext_resource type="Script" uid="uid://dt4fedt1d3jx5" path="res://Game/game.gd" id="1_q2y1q"]
+[ext_resource type="PackedScene" uid="uid://c5f4cxde0iwve" path="res://Game/Alien/brick.tscn" id="2_7jktm"]
+[ext_resource type="PackedScene" uid="uid://cnuntifc22cl4" path="res://Game/Ship/player.tscn" id="2_e2o6t"]
+[ext_resource type="PackedScene" uid="uid://b0g8t5wd2lrg2" path="res://Game/Ship/laser.tscn" id="2_fc0e3"]
+
+[node name="Game" type="Node"]
+script = ExtResource("1_q2y1q")
+alien = ExtResource("2_7jktm")
+bullet = ExtResource("2_fc0e3")
+
+[node name="Node2D" parent="." instance=ExtResource("2_e2o6t")]
+position = Vector2(942, 922)
+
+[connection signal="shoot" from="Node2D" to="." method="_on_node_2d_shoot"]
